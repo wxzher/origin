@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <scrip type="text/javascript" src="js/systemtime.js"></script>
+    <link rel="stylesheet" href="./fa/css/all.css">
+    <link rel="stylesheet" href="./css/img.css">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+
+    <style>
+        *,body,h3,h4,h5,h6{
+            margin: 0px;
+            padding: 0px;
+        }
+        #container{
+            width: 980px;
+            background-color: #f1f1e7;
+            margin: 0px auto;
+            font-size:10px;  
+             }
+        #pagetop{
+            min-height: 71px;
+           
+        
+
+        }
+        .indexlogo img{
+            width:65px ;
+            height: 65px;
+            float: left;
+            border: #00f 1px solid;
+            border-radius: 50%;
+            margin: 1px;
+        }
+        .topinfo{
+            width: 360px;
+            float: left;
+            line-height: 65px;
+            vertical-align: middle;
+            margin: 0 10px;
+
+        }
+        .topnav{
+            width: 500px;
+            
+            
+        }
+        .topnavlist{
+            width: 500px;
+        }
+        .topnavlist li{
+            list-style: none;
+        }
+        .topnavlist ul li{
+            display: inline-block; width: 60px;
+        } 
+        .topnavlist ul li a{
+            text-decoration: none;
+            color: #000;
+        } 
+        #nav{
+            text-align: center;
+            border: 1px solid hsl(60, 71%, 59%) ;
+            border-radius: 5px;
+           
+        }
+        #nav ul {
+            
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+           
+        }
+        #nav ul li{
+            display: inline-block;
+            width: 80px;
+            line-height: 36px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+               
+        }
+        #nav ul li a{
+            text-decoration: none;
+            color: #052e7a;
+            margin-right: 2px;
+        }
+        #nav ul li a:hover{
+            background-color: hsl(66, 43%, 15%);
+            border: #999999 solid 1px;
+            border-radius: 5px;
+            color: hsl(60, 33%, 96%);
+        }
+        #pagebody{
+            min-height: 600px; 
+        }
+
+
+
+
+        #bleft{
+            width: 195px;  min-height: 600px;
+            float: left;
+            
+        }
+
+        .userbox{
+            border: hsl(60, 71%, 59%) solid 1px ;
+            margin: 8px auto;
+            border-radius: 5px;
+        }
+        .userbox h3{
+             width: 195px;
+             height: 30px;
+             line-height: 30px;
+             background: url(./img/top.jpg.crdownload);
+             text-align: center;
+             font-size: 16px;
+             color:#052e7a ;
+        
+        
+        }
+        .userbox ul, .productbox ul{
+            list-style: none;
+        }
+        .userbox ul li, .productbox ul li{
+            line-height: 24px;
+           padding-left: 20px;
+        }
+        .userbox ul li a, .productbox ul li     {
+            text-decoration: none;
+            color: #000;
+        }
+        .productbox{
+            border: hsl(60, 71%, 59%) solid 1px ;
+            margin: 8px auto;
+            border-radius: 5px;            
+        }
+        .productbox h3{
+            width: 195px;
+             height: 30px;
+             line-height: 30px;
+             background: url(./img/top.jpg.crdownload);
+             text-align: center;
+             font-size: 16px;
+             color:#052e7a ;
+        
+        }
+        .productlist{
+            height: 100px;
+        }
+        .productlist h4{
+            font-size: 14x;
+            color:#898a62;
+            margin: 8px auto;
+            text-indent: 5px;
+            font-weight: bold;
+        }
+        .productlist ul{
+            list-style: none;
+        }
+        .productlist ul li{
+            line-height: 25px;
+        }
+        .productlist ul li a{
+            text-decoration: none;
+            color: #000;
+            text-align: center;
+        }
+      
+      
+        #bmiddle{
+            width: 580px;  min-height: 600px;
+            float: left;
+        }
+        #max{
+            width: 580px;
+            height: 300px;
+            align-items: center;
+            margin: 5px 5px;
+           
+        }           
+        .re{
+          position: relative;
+          height: 200px;
+        }
+        .re ul{
+          list-style-type:none ;
+        }
+        .re ul>li{
+          width: 580px;
+          height: 300px;
+          position: absolute;
+        
+          transition: 1s;
+          opacity: 0;
+        }
+        .re ul>li img{
+          width: 580px;
+          height: 300px;
+          border-radius: 10%;
+          border: 1px solid hsl(60, 71%, 59%);
+        }
+        #max ol {
+          position: relative;
+          display: grid;
+          grid-template-columns: repeat(6,15px);
+          grid-template-rows: auto;
+          grid-gap: 1em;gap: 1em;
+          float: left;
+          margin-top: 250px;
+          list-style: none;
+          top:0;left:10px;
+        }
+        #max ol li {
+          width: 15px;
+          height: 15px;
+          font-size: 8px;
+          line-height: 15px;
+          float: left;
+          text-align: center;
+          border-radius: 2em;
+          border: 1px solid #999999;
+        }
+        .showpic{
+            width: 100%;
+            border: hsl(60, 71%, 59%) 1px solid;
+            margin: 5px 5px;
+            border-radius: 5px;
+        }
+        .showpic h3{
+               height: 36px;
+               background: url(./img/top.jpg.crdownload);
+               font-size: 16px;
+               color: #052e7a;
+               line-height: 36px;
+               text-indent: 5px;
+               border-radius: 5px;
+        }
+        .showpic span{
+            display: block;
+            position: relative;
+            top: -28px;
+            left: 500px;
+           
+           
+
+        }
+        .showpic span a{
+            text-decoration: none;
+            color: #999999;
+            font-size: 15px;
+            vertical-align: center;
+        }
+        .showpic span a i{
+           display: inline-block;
+           margin-right:  5px ;
+         
+       
+    }
+        .showpic  .thumbnail{
+           
+            margin: 5px 20px;
+            
+        }
+        .showpic  .thumbnail .caption{
+            text-align: center;
+            
+        }
+        .showpic  .thumbnail .caption h5{
+            color: #000;
+        }
+        .showpic  .thumbnail .caption p{
+            color: hsl(0, 62%, 46%);
+            font-weight: bold;
+        }
+        .showpic  .thumbnail .caption a{
+            text-decoration: none;
+        }
+        .showpic  .thumbnail .caption a:hover{
+            font-size: 16px;
+        }
+
+
+
+
+
+        #bright{
+            width: 195px; min-height: 600px;
+            float: right;
+            /* position: relative; */
+            /* left: -6px; */
+        }
+        #rightinfo{
+            
+            border: 10px solid #383d05;
+            border-color: transparent  transparent transparent #a5b120;
+            margin: 5px 5px;
+            margin-left: 0;
+            
+        }
+        #rightinfo h4{
+            text-indent: 5px;
+
+    }
+ /* 设置容器的样式 */
+ .news-wrapper{
+     /* 设置宽度 */
+     width: 188px;
+     /* 设置高度 */
+     height: 300px;
+     /*设置居中  */
+     margin: 0px 5px;
+     /*设置上边框*/
+     border-top: 1px solid  #383d05;
+     
+     
+ }
+ 
+ .news-img{
+    
+     width: 190px;
+ }
+ /*设置图片效果*/
+ .news-img img{
+     width: 185px;
+     margin: 2px auto;
+     border-radius: 5px;
+ }
+ /* 设置图片的文字效果 */
+ .news-img .img-title{
+     /* 向上移动文字 */
+     margin-top: -40px;
+     /* 设置字体颜色 */
+     color: #9b3434;
+     /* 设置加粗 */
+     font-weight: bold;
+     /* 设置padding */
+     padding-left: 10px;
+     /*设置字体大小*/
+     text-align: center;
+     
+ }
+ .news-img  a{
+    text-decoration: none;
+ }
+
+ .news-list{
+   
+    margin-top: 5px;
+
+    border: hsl(60, 71%, 59%) 1px solid;
+    border-top:none;
+    list-style:none ; 
+ }
+ 
+ .news-list li{
+     /*设置下外边距  */
+     margin-bottom: 5px;
+     text-align: left;
+ }
+  .news-list li::before{
+     content: '■';
+     color: rgb(218, 218, 218);
+     font-size: 8px;
+     margin-right: 3px;
+ }
+
+ .news-list li a{ 
+     font-size: 8px;
+     color: #666;
+     text-decoration: none;
+ }
+ .news-list li a span{ 
+     display: inline-block;
+     background-color: rgb(233, 217, 216);
+     color: red;
+     margin-right: 5px;
+     padding: 1px;
+}
+       
+ .news-list li a:hover{
+     color: red;
+ }    
+ 
+ #rightfind,#rightpingpai{
+    border: 10px solid #383d05;
+    border-color: transparent  transparent transparent #a5b120;
+    margin: 5px 5px;
+    margin-left: 0;
+    position: relative;
+    top: 50px;
+   
+ }
+ #rightfind h4,#rightpingpai h4{
+     text-indent: 5px;
+     
+ }
+ /*品牌logo*/
+ 
+ 
+ 
+ #pingpailogo{
+     width: 190px;
+     height: 90px;
+     margin-top: 52px;
+     border: hsl(60, 71%, 59%) solid 1px;
+     border-top: none;
+    
+ }
+ #pingpailogo img{
+     width: 50px ;
+     height: 50px;
+     margin: 5px;
+     border-radius: 50%;
+     border: rgb(136, 136, 175) 1px solid;
+    
+ }
+
+ #pagefooter{
+      min-height: 150px; border: hsl(60, 
+71%, 59%) 1px solid;
+      clear: both;
+  }
+ /*底部navcss*/
+ #footnav div{
+     width:180px;
+     height: 150px;
+     float: left;
+     text-align: center;
+     font-size: 13px;
+     line-height: 20px;
+     
+     
+ }
+    </style>
+</head>
+          <body>
+    <div id="container">
+        <div id="pagetop">
+    <!--      网站头部-->
+        <div class="indexlogo"> <img src="./img/波吉_03.png" alt=""></div>
+         <div class="topinfo">
+         <span>你好，欢迎登录我的网站。<a href="setup.html">请登录 </a>
+           新用户？ <a href="login.html">请免费注册</a></span>   
+        </div> 
+            <div class="topnav" style="clear:both; position:absolute; top:20px; left:1000px; ">
+                <div class="topnavlist">
+                <ul>
+                    <li><a href="">帮助中心|</a></li>
+                    <li><a href="">客户反馈|</a></li>
+                    <li><a href="">网站地图|</a></li>
+                    <li><a href="">加入收藏|</a></li>
+                    <li style="width:200px;"><span id="sysTime"></span></li>
+                    <script>
+                        function showTime(){
+                        var today = new Date();//获取计算机的系统时间
+                        var year = today.getFullYear();//获取年
+                        var month = today.getMonth();//获取月份
+                        var day  = today.getDate();//获取日
+                        var hh = today.getHours();//获取小时
+                        var mm = today.getMinutes();//获取分钟
+                        var ss = today.getSeconds();//获取秒
+                        document.getElementById("sysTime").innerHTML=year + "年"+month+"月" +day +"日"+hh+"时"+mm+"分"+ss+"秒";
+
+}
+                        window.setInterval("showTime()",1000);
+                        window.onload = showTime;
+                    </script>          
+
+                </ul>
+               </div>
+               <div>
+                   <marquee  direction="up" heigt="25px" style="text-indent: 40px;"><a href="">明天有秒杀活动！</a></marquee>
+               </div>
+            </div>
+            <!--主导航-->
+            <div id="nav" style="clear: both;">
+                <div style="background: url(./img/top.jpg.crdownload); height: 36px;" >
+                <ul>
+                    <li><a href="#">网站首页 </a>|</li>
+                    <li><a href="#">分类导航 </a>|</li>
+                    <li><a href="https://help.jd.com/user/custom.html">购物帮助</a> |</li>
+                    <li><a href="https://kankan.eastday.com/?qid=360dh">新闻资讯 </a>|</li>
+                    <li><a href="https://passport.jd.com/uc/login?ReturnUrl=https%3A%2F%2Forder.jd.com%2Fcenter%2Flist.action">报价单 </a>|</li>
+                    <li><a href="https://passport.jd.com/uc/login?ReturnUrl=https%3A%2F%2Forder.jd.com%2Fcenter%2Flist.action">发货单 </a></li>
+                    
+                </ul></div>
+                <div style="background: url(./img/top.jpg.crdownload) ;height:36px; text-align: left; text-indent: 25px; line-height: 36px;" >
+                <span style="font-size: 14px; color: #052e7a;">商品搜索</span><span>
+                <select>
+                    <option value="1">所有分类</option>
+                    <option value="2">最新商品</option>
+                    <option value="3">热卖商品</option>
+                    
+                </select>
+
+             </span>
+             <span> <input type="text" maxlength="50"><input type="button" value="搜索"></inpur></span>
+             <span style=" float: right; "> 
+                <i class="fas fa-cart-plus" ></i> 购物车暂时为空    | 
+                <i class=" fas fa-file-alt"></i> 用户中心     |
+                <i class=" fas fa-yen-sign"></i> 去结算&nbsp;&nbsp;&nbsp;&nbsp;
+
+            </span>
+                </div>
+              
+              
+              
+            </div>
+          
+        </div>
+        <div id="pagebody">
+          <!--网站中部主体-->
+            <!--网站中部左边-->
+            <div id="bleft">
+                <div id="userbox" class="userbox">
+                    <h3>用户信息</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-user" ></i>&nbsp;&nbsp;<a href="login.html">注册/登录</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-shopping-cart" ></i>&nbsp;&nbsp;<a 
+                            href="javascript:;">购物车（0）</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-chart-bar" ></i>&nbsp;&nbsp;<a 
+                            href="#">对比（0）</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="productbox" class="productbox">
+                    <h3>商品分类</h3>
+                    <div class="productlist">  
+                        <h4> > 家用电器</h4>
+                        <ul>
+                           <li><a href="#">大家电&nbsp;&nbsp;&nbsp;&nbsp;</a><a href="#">| 租房电器</a></li>
+                           <li><a href="#">汽车用品 | 个人护理</a></li>
+                           <li><a href="#">生活电器 | 其他家电</a></li>
+                        </ul>
+                    </div>
+                    <div class="productlist">
+                        <h4> > 手机数码</h4>
+                        <ul>
+                            <li><a href="#">数码相机 | 手机通讯</a></li>
+                            <li><a href="#">时尚影音 | 数码配件</a></li>
+                            <li><a href="#">数码影像 | 手机配件</a></li>
+                        </ul>
+                    </div>
+                    <div class="productlist">
+                        <h4> > 电脑产品</h4>
+                        <ul>
+                            <li><a href="#">笔记本&nbsp;&nbsp;&nbsp;</a><a href="#"> | 办公耗材</a></li>
+                            <li><a href="#">电脑软件 | 网络产品</a></li>
+                            <li><a href="#">办公设备 | 电脑整机</a></li>
+                    </div>
+                    <div class="productlist">
+                        <h4> > 日用百货</h4>
+                        <ul>
+                            <li><a href="#">玩具乐器 | 办公耗材</a></li>
+                            <li><a href="#">礼品箱包 | 钟表首饰</a></li>
+                        </ul>
+                    </div>
+                    <div class="productlist">
+                        <h4> > 服装鞋帽</h4>
+                        <ul>
+                            <li><a href="#">运动鞋&nbsp;&nbsp;&nbsp;&nbsp;</a><a href="#">|&nbsp;&nbsp;运动装</a></li>
+                            <li><a href="#">男士服装 | 女士服装</a></li>
+                    
+                        </ul>
+                    </div>
+                    <div class="productlist">  
+                        <h4> > 美妆产品</h4>
+                        <ul>
+                           <li><a href="#">护肤水&nbsp;&nbsp;&nbsp;&nbsp;</
+                   a><a href="#">| 洗发护发</a></li>
+                           <li><a href="#">口腔护理 | 身体护理</a></li>
+                           <li><a href="#">香水彩妆 | 男士护肤</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--网站中部中间部分-->
+            <div id="bmiddle">
+              <div id="max">
+                 <div class="re">
+                 <ul>
+                    <li><img src="./img/图1.jpg" alt=""></li>
+                    <li><img src="./img/图2.jpg" alt=""></li>
+                    <li><img src="./img/图3.jpg" alt=""></li>
+                    <li><img src="./img/图4.jpg" alt=""></li>
+                    <li><img src="./img/图5.jpg" alt=""></li>
+                    <li><img src="./img/图6.jpg" alt=""></li>
+                 </ul>
+                 <ol>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+                </div>
+            </div>
+            <script>
+       window.onload = function(){
+       var box=this.document.getElementsByClassName("re")[0];
+       var lik=box.getElementsByTagName("li");
+       function fun(i,j){//转换图片函数，就是把透明度改了一下
+         lik[i].style.opacity=1;
+         lik[j].style.opacity=0;
+         lik[i+6].style.backgroundColor="#ffffff";//改一下小图标
+         lik[j+6].style.backgroundColor="#00000000"
+       }
+       fun(0,1);//初始化下
+       var i =0;
+       function auto(){//轮播循环函数
+         if(++i>=6){
+           i=0;
+           fun(0,5);
+         }
+         else fun(i,i-1);
+       }
+       timer=this.setInterval(auto,2000);
+       box.onmouseover = function () { //鼠标划上去，停止轮播
+         console.log('good');
+         clearInterval(timer);
+       }
+       box.onmouseout = function () { //鼠标划出，继续轮播
+         timer = setInterval(auto, 2000); //调用定时器
+       }
+       var j =0;
+       for(;j<6;j++){//点击小图标也可以转换图片
+         lik[j+6].ind=j;
+         lik[j+6].onclick=function(){
+           fun(this.ind,i)
+           i=this.ind;
+         }
+       }
+      }
+         </script>
+           <div class="showpic">
+                <h3>每日特价<i  class="fas fa-arrow-circle-down"></i></h3>
+                <span><a href="#"><i class="fas fa-caret-right"></i>more</a></span>
+            
+                <div class="col-sm-6 col-md-4" style="display: inline-block;">
+                  <div class="thumbnail">
+                    <a href="#"><img src="./img/p1.jpg.webp.jpg" alt="..."></a>
+                    <div class="caption">
+                      <a href="#"><h5>雅玛滴滴代步</h5></a>
+                      <a href="#"><p>￥2700.00</p></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-4" style="display: inline-block;">
+                    <div class="thumbnail">
+                      <img src="./img/p2.jpg.webp.jpg" alt="...">
+                      <div class="caption">
+                        <a href="#"><h5>广西砂糖橘</h5></a>
+                        <a href="#"><p>￥64.90</p></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4" style="display: inline-block;
+                  ">
+                       <div class="thumbnail">
+                        <a href="#"><img src="./img/p3.jpg.webp.jpg" alt="..."></a>
+                         <div class="caption">
+                            <a href="#"><h5>依视路镜片</h5></a>
+                            <a href="#"><p>￥398.00</p></a>
+                         </div>
+                       </div>
+                     </div>
+        </div>
+        <div class="showpic ">
+            <h3>热卖产品<i  class="fas fa-arrow-circle-down"></i></h3>
+            <span><a href="#"><i class="fas fa-caret-right"></i>more</
+        a></span>
+                <div class="col-sm-6 col-md-4" style="display: inline-block;">
+                  <div class="thumbnail">
+                    <a href="#"><img src="./img/p4.jpg.webp.jpg" alt="..."></a>
+                    <div class="caption">
+                       <a href="#"><h5>年货礼盒</h5></a>
+                       <a href="#"><p>￥700.00</p></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-4" style="display: inline-block;">
+                    <div class="thumbnail">
+                        <a href="#"> <img src="./img/p5.jpg.webp.jpg" alt="..."></a>
+                      <div class="caption">
+                         <a href="#"><h5>黑鲨4s pro </h5></a>
+                         <a href="#"><p>￥3969.00</p></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4" style="display: inline-block;
+                  ">
+                       <div class="thumbnail">
+                         <a href="#"><img src="./img/p6.png.webp.jpg" alt="..."></a>
+                         <div class="caption">
+                            <a href="#"><h5>小米有品 全格</h5></a>
+                            <a href="#"> <p>￥29.00</p></a>
+                         </div>
+                       </div>
+                     </div>
+        </div>
+        </div>
+      
+      
+      
+      
+
+    
+            <!--网站中部右边部分-->
+        <div id="bright">  
+            <div id="rightinfo">
+              
+                <h4>波吉快报</h4>
+            </div>
+                 <!-- 创建新闻列表的外侧的容器 -->
+ <div class="news-wrapper">
+    
+    <!-- 创建一个图片的容器 -->
+    <div class="news-img">
+        <a href="#">
+            <img src="./img/p7.jpg.webp.jpg" alt="快报">
+            <!-- 创建图片标题 -->
+            <h5 class="img-title">
+                苹果产品教育优惠来袭 
+                <br>心动不如行动！
+            </h5>
+        </a>
+    </div>
+    <!-- 新闻列表 -->
+    <ul class="news-list">
+        <li>
+            <a href="#"><span>热议</span>北狐显示器支架，我肩颈视力的大救星</a>
+        </li>
+        <li>
+            <a href="#"><span>最新</span>电竞好搭档，外星人m15R5锐龙般游戏本测评</a>
+        </li>
+        <li>
+            <a href="#"><span>热评</span>百元入手，养宠无忧的德尔玛DX300吸尘器</a>
+        </li>
+        <li>
+            <a href="#"><span>最新</span>爱用好物：白龙马电动牙刷</a>
+        </li>
+    </ul>
+</div>
+      <div id="rightfind">
+     
+          <h4>发现好货</h4>
+         </div>
+         <div class="slideshow-container">
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 3</div>
+              <img src="./img/p8.jpg.webp.jpg" style="width:100%">
+              <div class="text">最新兰蔻小红瓶</div>
+            </div>
+           
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 3</div>
+              <img src="img/p9.jpg.webp.jpg" style="width:100%">
+              <div class="text">ipad2021全新款</div>
+            </div>
+           
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 3</div>
+              <img src="img/p10.jpg.webp.jpg" style="width:100%">
+              <div class="text">Vivo Y55全新款上市
+              </div>
+            </div>
+           
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <br>
+           
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+          </div>
+           
+          <!-- js文件最后加载，提高页面呈现速度 -->
+          <script src="js/carousel.js"></script>
+         
+          <!--加盟品牌-->
+          <div id="pingpai">
+          <div id="rightpingpai">
+            <h4>加盟品牌</h4>
+        </div>    
+        <div id="pingpailogo">
+            <img src="./img/京东.png" 
+       alt="">
+            <img src="./img/orange.webp.jpg" 
+       alt="">
+            <img src="./img/what.webp.jpg" 
+       alt="">
+         </div>   
+        </div> 
+    </div>
+   
+   
+   
+
+        <div id="pagefooter">
+            <div id="footnav">
+                <div>
+                    <br><span style="font-weight: 
+                    bold;">购物指南</span>
+                    <br>生活旅行
+                    <br>购物流程
+                    <br>会员介绍
+                    <br>常见问题
+                    <br>联系客服
+                </div>
+                <div>
+                    <br><span style="font-weight: bold;">配送方式</span>
+                    <br>上门自提
+                    <br>211限时达
+                    <br>配送服务查询
+                    <br>配送费用查询
+                    <br>海外配送
+                </div>
+                <div>
+                    <br><span style="font-weight: 
+               bold;">支付方式</span>
+                    <br>货到付款
+                    <br>在线支付
+                    <br>分期付款
+                    <br>公司转账
+        
+                </div>
+                <div>
+                    <br><span style="font-weight:
+               bold;">售后服务</span>
+                    <br>售后政策
+                    <br>价格保护
+                    <br>退款说明
+                    <br>取消订单
+                </div>
+                <div>
+                    <br><span style="font-weight:
+               bold;">特色服务</span>
+                    <br>DIY装机
+                    <br>夺宝岛
+                    <br>延保服务
+                    <br>波吉E卡
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
